@@ -27,18 +27,21 @@ omegaz = 3
 
 # initial field configuration: Gaussian in every component with random phase; modify as desired
 sigma = 3.0 * dx
-psi1 = np.exp(1.j * random.uniform(0, 2 * np.pi)) * np.exp(
+G1 = np.exp(
     -((xx - random.uniform(3 * dx, L - 3 * dx)) ** 2 + (yy - random.uniform(3 * dx, L - 3 * dx)) ** 2 + (
             zz - random.uniform(3 * dx - L/2, L/2 - 3 * dx)) ** 2) / (
             2 * sigma ** 2))
-psi2 = np.exp(1.j * random.uniform(0, 2 * np.pi)) * np.exp(
+G2 = np.exp(
     -((xx - random.uniform(3 * dx, L - 3 * dx)) ** 2 + (yy - random.uniform(3 * dx, L - 3 * dx)) ** 2 + (
             zz - random.uniform(3 * dx - L/2, L/2 - 3 * dx)) ** 2) / (
             2 * sigma ** 2))
-psi3 = np.exp(1.j * random.uniform(0, 2 * np.pi)) * np.exp(
+G3 = np.exp(
     -((xx - random.uniform(3 * dx, L - 3 * dx)) ** 2 + (yy - random.uniform(3 * dx, L - 3 * dx)) ** 2 + (
             zz - random.uniform(3 * dx - L/2, L/2 - 3 * dx)) ** 2) / (
             2 * sigma ** 2))
+psi1 = np.exp(1.j * random.uniform(0, 2 * np.pi))*G1 + np.exp(1.j * random.uniform(0, 2 * np.pi))*G2 + np.exp(1.j * random.uniform(0, 2 * np.pi))*G3
+psi2 = np.exp(1.j * random.uniform(0, 2 * np.pi))*G1 + np.exp(1.j * random.uniform(0, 2 * np.pi))*G2 + np.exp(1.j * random.uniform(0, 2 * np.pi))*G3
+psi3 = np.exp(1.j * random.uniform(0, 2 * np.pi))*G1 + np.exp(1.j * random.uniform(0, 2 * np.pi))*G2 + np.exp(1.j * random.uniform(0, 2 * np.pi))*G3
 
 fullrot = 2 * np.pi * dx ** 2 * (1 / 3)  # one full rotation of the laplacian phase
 dt = (1 / eta) * fullrot  # timestep
