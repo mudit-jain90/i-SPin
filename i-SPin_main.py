@@ -25,8 +25,8 @@ omegax = 3
 omegay = 3
 omegaz = 3
 
-# initial field configuration: Gaussian in every component with random phase; modify as desired
-sigma = 3.0 * dx
+# initial field configuration: Gaussian spatial profile in every component with random phase; modify as desired
+sigma = 3.0 * dx #width of the Gaussian profile
 G1 = np.exp(
     -((xx - random.uniform(3 * dx, L - 3 * dx)) ** 2 + (yy - random.uniform(3 * dx, L - 3 * dx)) ** 2 + (
             zz - random.uniform(3 * dx - L/2, L/2 - 3 * dx)) ** 2) / (
