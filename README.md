@@ -2,7 +2,7 @@
 
 A code to simulate 3-component Schrodinger systems (with/without gravity + with/without self-interactions) obeying SO(3) symmetry
 
-based on arXiv:2211.xxxxx with Mustafa A. Amin
+based on arXiv:2211.08433 with Mustafa A. Amin
 
 The main file to run is i-SPin_main.py. It allows the user to input desired parameters, along with initial conditions for the Schrodinger fields. 
 It uses three function modules: 
